@@ -25,11 +25,11 @@ Quickkart is a full-stack e-commerce web application built using the **MERN stac
 
 ```
 quickkart/
-├── client/         # React frontend
+├── frontend/         # React frontend
 │   ├── components/
 │   ├── pages/
 │   └── redux/
-├── server/         # Express backend
+├── backend/         # Express backend
 │   ├── controllers/
 │   ├── models/
 │   ├── routes/

@@ -29,3 +29,5 @@ const OrderSchema = new Schema({
     enum: ["pending", "paid", "shipped"], 
     default: "pending" },
 },{ timestamps: true });
+
+export default model('Order', OrderSchema);

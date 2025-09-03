@@ -1,16 +1,20 @@
 const express = require("express");
-const port = 5000;
+const port = process.env.PORT || 5000;
 const app = express();
+require('dotenv').config();
+const connectDB = require('./config/db');
 
+//db connection
+connectDB();
+
+//middlewares
 app.use(express.json());
 
-const authRoutes = require("./routes/auth.routes");
-const orderRoutes = require("./routes/order.routes");
-const productRoutes = require("./routes/product.routes");
-
-app.use("/api/auth", authRoutes);
-app.use("/api/orders", orderRoutes);
-app.use("/api/products", productRoutes);
+//routes
+const routes = require("./routes");
+app.use("/api/auth", routes.authRoutes);
+app.use("/api/orders", routes.orderRoutes);
+app.use("/api/products", routes.productRoutes);
 
 app.listen(5000, () => {
     console.log(`Server is running at http://localhost:${port}/`);

@@ -3,7 +3,7 @@ const { Schema, model, Types } = mongoose;
 
 const OrderSchema = new Schema({
     user: {
-        typeof: Types.ObjectId,
+        type: Types.ObjectId,
         ref: 'User',
         required: true
     },
